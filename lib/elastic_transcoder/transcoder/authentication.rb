@@ -6,10 +6,10 @@ module ElasticTranscoder
   require 'digest'
   require "time"
     module Authentication
-      @@digest1 = OpenSSL::Digest::Digest.new("sha1")
+      @@digest1 = OpenSSL::Digest.new("sha1")
       @@digest256 = nil
       if OpenSSL::OPENSSL_VERSION_NUMBER > 0x00908000
-        @@digest256 = OpenSSL::Digest::Digest.new("sha256") rescue nil # Some installation may not support sha256
+        @@digest256 = OpenSSL::Digest.new("sha256") rescue nil # Some installation may not support sha256
       end
       
       # Set a timestamp and a signature version
